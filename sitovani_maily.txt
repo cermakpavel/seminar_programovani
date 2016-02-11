@@ -1,0 +1,40 @@
+#sitovaní maturitní otázka
+-viz obrázek na alisma wiki
+-switch - inteligentní zásuvka, zajistí komunikaci počítačů k němu připojených, data jen přeposílá
+-router - propojuje switche/server/zařízení, umí směrování a kam co poslat -> zajišťuje napojení na internet
+  routovací tabulka -> ví že když je nějaká adresa tak to má poslat někam, nemá databázi všech ale jen okolí, když neví kam posalt tak to pošle někam kde myslí že to je rozumné a doufá, že tam se to přepošle dál správně
+  NAT - router má public adresu, tu dědí celá síť pod ním (zde jsou lokální adresy, ale s internetem komunikují pod adresou routeru)
+IP ADRESY
+  každý počítač kdekoli bude mít svoji IP adresu a ta bude unikátní, ale začali docházet a začal se používat NAT
+    máme tedy IP ADRESU (public - veřejná), poté MAC ADRESA(local - lokální) a PAYLOAD (aplikační vrstva - obsah zprávy)
+    TCP - k IP se dodává port, aby mohl komunikovat více cestama
+DNS SERVERY
+  -různé domény nejvyšší úrovně a k nim se budou přiřazovat další domény serverů atd.
+  -teď národní domény atd. př: .cz
+  - DNS - k ip adresům se přiřazují dané ip adresy počítačů na kterých to běží
+    příklad: http://www.dnssec.cz/files/nic/img/domenovy_strom3.gif
+  DNS SERVER 
+    ví, kde se nacházejí DNS servery pro podomény hlavní domény
+    ->.com má vlasní DNS, .cz má vlastní DNS atd.
+    ->ty mají zase další DNS servery pro subdomény
+    -hlavní DNS server by měl moc požadavků -> spadnul by -> některé sítě mají vlastní DNS, který si pamatuje dotazy -> neptá se znova, když už se před chvílí ptal
+posílání mailů
+  zjistíme si přes DNS na kterou mašinu to poslat, tam běží mailový server, který ji přijme (představa 1 mail = 1 soubor)
+  SMTP - protokol pro posílání mailů
+  mailový klient - k pracování s mailovými servery
+  IMAP - zprávy jsou stále uloženy na serveru, my si stáhneme jen ty co prohlížíme
+  POP3 - stáhne zprávy k nám, a ty se na serveru smazali
+  
+  hlavičky mailů - ukázka na wiki
+    končí prázdnou řádkou
+    když je popisek k určité věci moc dlouhý, hodí se na další řádek ale je posunutý mezerama
+    -datum, časová zóna, komu je doručen, od koho byl poslán, ip adresa, nadpis, servisní záznamy kudy mail putoval (jaká šifra byla použita atd.)
+  na zprávě se dají nastavit různé priority, k čemu je předmět, obsah, při odpovědi se mail rozseká na části a odpovídá se do těla toho mailu
+    
+  typicky se posílá v 7 bitovém kódování (horní 8. bit se používal ke kontrolování)
+  zprávy od hlavičky jsou odděleny blokem (obsahující kódování atd.)
+  příloha má také svůj blok (typ souboru atd.)
+    
+    
+    
+    
