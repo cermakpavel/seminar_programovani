@@ -34,7 +34,7 @@ posílání mailů
   typicky se posílá v 7 bitovém kódování (horní 8. bit se používal ke kontrolování)
   zprávy od hlavičky jsou odděleny blokem (obsahující kódování atd.)
   příloha má také svůj blok (typ souboru atd.)
-    
+když odešleme nějakou zprávu, počítač který ji dostane krátkou zprávu,že ji dostal...když nám odpověď nedojde do určité chvíle tak to pošleme znovu    
     
     
     
