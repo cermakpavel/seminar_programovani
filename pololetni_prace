@@ -1,0 +1,66 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Řešení kvadratické rovnice</title>
+<script type="text/javascript" language="javascript"
+    src="jquery-1.12.1.min.js"></script>
+<script type="text/javascript" language="javascript">
+
+function spocitejObvod(a, b, c) {
+  var obvod = a + b +c;
+  $("#obvod").html("<b>Obvod: </b>" + obvod + "<br/>");
+}
+
+function spocitejObsah(a, b, c) {
+  var obvod = a + b + c;
+  var s = obvod / 2;
+  var obsah = Math.sqrt(s * (s-a) * (s-b) * (s-c));
+  $("#obsah").html("<b>Obsah: </b>" + obsah + "<br/>");
+}
+
+
+function spocitejVse() {
+  var a1 = $("#a").val();
+  var b1 = $("#b").val();
+  var c1 = $("#c").val();
+  var a = parseInt(a1);
+  var b = parseInt(b1);
+  var c = parseInt(c1);
+  spocitejObvod(a, b, c);
+  spocitejObsah(a, b, c);
+}
+
+$(document).ready(function(){
+  $("#spocitat").click(spocitejVse);
+});
+
+</script>
+<style type="text/css">
+#rovnice INPUT {
+  width: 3em;
+  text-align: right;
+}
+</style>
+</head>
+<body>
+<h1>Vlastnosti trojúhelníku</h1>
+<h5>Zadej rozměry stran a počty nech na mě ;)</h5>
+<p id="trojuhelnik">
+<b>a: </b>
+<input type="text" id="a" value="1" />
+<b>b: </b>
+<input type="text" id="b" value="2" />
+<b>c: </b>
+<input type="text" id="c" value="1" />
+</p>
+<p>
+<input type="button" value="Spočítat" id="spocitat" />
+</p>
+<p>
+<strong><u>Vlastnosti zadaného trojúhelníku:</u></strong><br />
+<span id="obvod"></span>
+<span id="obsah"></span>
+</p>
+ 
+</body>
+</html>
